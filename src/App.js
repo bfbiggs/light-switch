@@ -12,10 +12,11 @@ function App() {
       <div className="surface window" />
       <div className="surface ceiling" />
       <div className="surface light" />
-      <div className="surface switch ">
+      <div className="surface switch">
         <button
           className={`switch-click${status ? " on" : ""}`}
           onClick={() => toggleLight(!status)}
+          data-testid="switch-button"
         ></button>
       </div>
     </div>

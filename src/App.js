@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
 function App() {
+  const [status, toggleLight] = React.useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`room${status ? " on" : ""}`}>
+      <div className="surface floor" />
+      <div className="surface left-wall" />
+      <div className="surface right-wall" />
+      <div className="surface center-wall" />
+      <div className="surface window" />
+      <div className="surface ceiling" />
+      <div className="surface light" />
+      <div className="surface switch ">
+        <button
+          className={`switch-click${status ? " on" : ""}`}
+          onClick={() => toggleLight(!status)}
+        ></button>
+      </div>
     </div>
   );
 }
